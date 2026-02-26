@@ -2,10 +2,10 @@
 
 namespace DataService.Repositories
 {
-    /// <summary>
-    /// DiscussionRepository. 
-    /// </summary>
-    public class InMemoryDiscussionRepository : InMemoryRepository<Discussion>
-    {
-    }
+  /// <summary>
+  /// DiscussionRepository. 
+  /// </summary>
+  public class InMemoryDiscussionRepository : InMemoryRepository<Discussion>
+  {
+  }
 }

@@ -1,29 +1,29 @@
-﻿using DataService.Models;
-using System;
+﻿using System;
+using DataService.Models;
 
 namespace PlanPoker.Models
 {
+  /// <summary>
+  /// Класс пользователь.
+  /// </summary>
+  public class User : Entity
+  {
     /// <summary>
-    /// Класс пользователь.
+    /// Имя пользователя.
     /// </summary>
-    public class User : Entity
+    public string Name { get; set; }
+
+    /// <summary>
+    /// Токен пользователя.
+    /// </summary>
+    public string Token { get; set; }
+
+    /// <summary>
+    /// Конструктор класса User.
+    /// </summary>
+    /// <param name="id">Id сущности User.</param>
+    public User(Guid id) : base(id)
     {
-        /// <summary>
-        /// Имя пользователя.
-        /// </summary>
-        public string Name { get; set; }
-
-        /// <summary>
-        /// Токен пользователя.
-        /// </summary>
-        public string Token { get; set; }
-
-        /// <summary>
-        /// Конструктор класса User.
-        /// </summary>
-        /// <param name="id">Id сущности User.</param>
-        public User(Guid id) : base(id)
-        {
-        }
     }
+  }
 }
