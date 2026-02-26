@@ -1,0 +1,26 @@
+.enter_btn {
+  color: #ffffff;
+  font-weight: normal;
+  font-size: 14px;
+  font-family: "Roboto";
+  font-style: normal;
+  line-height: 16px;
+  text-align: center;
+
+  background: #4b9ae8;
+  border-radius: 4px;
+}
+
+.enter_btn:hover {
+  background: #418cd6;
+  border-radius: 4px;
+}
+
+.enter_btn:active {
+  background: #3069a1;
+  border-radius: 4px;
+}
+
+.input_enter_btn {
+  margin-top: 36px;
+}

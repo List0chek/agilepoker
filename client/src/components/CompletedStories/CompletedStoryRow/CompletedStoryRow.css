@@ -1,0 +1,49 @@
+.completed_stories_cell_storyname {
+  width: 130px;
+  margin-left: 21px;
+  overflow: hidden;
+
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.completed_stories_cell_avg_vote {
+  width: 80px;
+  margin-left: auto;
+  overflow: hidden;
+
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.completed_stories_cell_delete_story_button {
+  margin-left: auto;
+}
+
+.completed_stories_delete_btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 14px;
+  height: 18px;
+  margin-right: 21px;
+
+  background: transparent;
+  border: none;
+}
+
+.completed_stories_delete_btn_notClickable {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 14px;
+  height: 18px;
+  margin-right: 21px;
+
+  background: transparent;
+  border: none;
+  cursor: not-allowed;
+  opacity: 0.5;
+
+  pointer-events: none;
+}

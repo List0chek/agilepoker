@@ -1,0 +1,44 @@
+.card {
+  display: inline-flex;
+  width: 132px;
+  height: 174px;
+  margin-right: 13px;
+  margin-bottom: 13px;
+
+  font-size: 46px;
+
+  background: #ffffff;
+  border: 1px solid whitesmoke;
+  border-radius: 4px;
+  box-shadow: 0 0 6px 1px rgba(1, 1, 1, 0.05);
+}
+
+.card_text {
+  display: flex;
+  align-items: center;
+  margin-top: auto;
+  margin-right: auto;
+  margin-bottom: auto;
+  margin-left: auto;
+}
+
+.card:hover {
+  box-shadow: 0 0 6px 3px rgba(1, 1, 1, 0.25);
+}
+
+.radio:checked + .card {
+  color: #ffffff;
+
+  background-color: #4b9ae8;
+  box-shadow: 0 0 6px 1px rgba(1, 1, 1, 0.05);
+
+  fill: #ffffff;
+}
+
+.radio {
+  position: absolute;
+  top: 0;
+  z-index: -1;
+
+  opacity: 0;
+}

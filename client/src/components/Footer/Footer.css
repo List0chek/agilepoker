@@ -1,0 +1,37 @@
+.main_footer {
+  display: flex;
+  width: 100%;
+  height: 70px;
+  margin: 0 auto;
+  margin-top: 10px;
+
+  font-family: "Roboto";
+
+  background: #ffffff;
+}
+
+.main_footer_content_block {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 1032px;
+  margin: 0 auto;
+}
+
+.main_footer_copyright {
+  color: #808284;
+  font-weight: normal;
+  font-size: 12px;
+  font-style: normal;
+  line-height: 14px;
+}
+
+.main_footer_url {
+  color: #4b9ae8;
+  font-weight: normal;
+  font-size: 12px;
+  font-style: normal;
+  line-height: 14px;
+  text-decoration: none;
+}

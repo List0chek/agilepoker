@@ -1,0 +1,70 @@
+.user_btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #131b23;
+  font-weight: normal;
+  font-size: 18px;
+  font-family: "Roboto";
+  font-style: normal;
+  line-height: 21px;
+
+  background: transparent;
+  border: none;
+}
+
+.user_btn:hover .sign_out_button {
+  display: block;
+  align-items: center;
+  justify-content: center;
+}
+
+.user_btn_username_and_logo_wrap {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: transparent;
+  border: none;
+}
+
+.user_btn_username {
+  width: 100%;
+  max-width: 200px;
+  padding-right: 10px;
+  overflow: hidden;
+
+  white-space: nowrap;
+  text-align: left;
+  text-overflow: ellipsis;
+}
+
+
+.sign_out_button {
+  position: absolute;
+  bottom: 0;
+  z-index: 1000;
+
+  display: none;
+
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 250px;
+  height: 39px;
+
+  color: #4b9ae8;
+  font-weight: normal;
+  font-size: 14px;
+  font-family: "Roboto";
+  font-style: normal;
+  line-height: 16px;
+  text-align: center;
+
+  background: #ffffff;
+  border: 1px solid #4b9ae8;
+  border-radius: 4px;
+  transform: translateY(100%);
+}

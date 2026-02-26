@@ -1,0 +1,27 @@
+.row {
+  display: flex;
+  align-items: center;
+  height: 67px;
+
+  border-bottom: 1px solid #f2f3f4;
+}
+
+.cell_user_icon {
+  padding: 0 0 0 24px;
+}
+
+.cell_username {
+  width: 130px;
+  padding: 0 0 0 16px;
+  overflow: hidden;
+
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.cell_voted_icon {
+  margin-right: 27px;
+  margin-left: auto;
+
+  text-align: center;
+}

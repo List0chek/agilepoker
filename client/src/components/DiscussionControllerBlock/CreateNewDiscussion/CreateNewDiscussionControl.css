@@ -1,0 +1,49 @@
+.story_vote_go_create_discussion_block {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 45px;
+}
+
+.go_btn {
+  width: 68px;
+  height: 39px;
+
+  color: #ffffff;
+  font-weight: normal;
+  font-size: 14px;
+  font-family: "Roboto";
+  font-style: normal;
+  line-height: 16px;
+  text-align: center;
+
+  background: #4b9ae8;
+  border-radius: 0 4px 4px 0;
+}
+
+.story_vote_go_textbox {
+  box-sizing: border-box;
+  width: 184px;
+  height: 39px;
+  padding-left: 14px;
+
+  color: #131b23;
+  font-weight: normal;
+  font-size: 14px;
+  font-family: "Roboto";
+  font-style: normal;
+  line-height: 16px;
+
+  border: 1px solid #d5d9de;
+  border-radius: 4px 0 0 4px;
+}
+
+.go_btn:hover {
+  background: #418cd6;
+  border-radius: 4px 0 0 4px;
+}
+
+.go_btn:active {
+  background: #3069a1;
+  border-radius: 4px 0 0 4px;
+}

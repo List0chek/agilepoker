@@ -1,0 +1,23 @@
+.main_header {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  width: 100%;
+  height: 90px;
+  margin: 0 auto;
+
+  font-family: "Roboto";
+
+  background: #ffffff;
+}
+
+.main_header_content_block {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1032px;
+  margin: 0 auto;
+}
+

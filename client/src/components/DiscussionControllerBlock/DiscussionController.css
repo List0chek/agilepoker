@@ -1,0 +1,59 @@
+.story_vote {
+  display: flex;
+  flex-basis: auto;
+  flex-direction: column;
+  flex-shrink: 0;
+  width: 295px;
+  margin-top: 31px;
+  margin-bottom: auto;
+  margin-left: 20px;
+
+  background: #ffffff;
+
+  border-right: 1px solid #f2f3f4;
+  border-bottom: 1px solid #f2f3f4;
+  border-left: 1px solid #f2f3f4;
+  border-radius: 4px;
+}
+
+.story_vote_header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  height: 60px;
+
+  color: #ffffff;
+  font-weight: normal;
+  font-size: 18px;
+  font-style: normal;
+
+  background: #4b9ae8;
+  border-radius: 4px 4px 0 0;
+}
+
+.players_name_row {
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  height: 67px;
+
+  border-bottom: 1px solid #f2f3f4;
+}
+
+.players_name_text {
+  margin-left: 24px;
+
+  color: #000000;
+  font-weight: normal;
+  font-size: 18px;
+  font-style: normal;
+  line-height: 21px;
+}
+
+.players_table {
+  box-sizing: border-box;
+  width: 100%;
+
+  border-collapse: collapse;
+}

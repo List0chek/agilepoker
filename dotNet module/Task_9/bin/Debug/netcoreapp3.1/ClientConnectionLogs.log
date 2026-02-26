@@ -1,0 +1,20 @@
+Date	Time	SQL Server	Database	User name	Host name	IP	Action	Client version	Client count	Available licenses	Licenses count
+11.12.2007	17:01:07        ORPDNPO ResearchDIR     PANDA   W242V.comp.npo  192.168.17.242  Registration    7.6.1.1000      1       98      99
+11.12.2007	17:01:38        ORPDNPO ResearchDIR     PANDA   W242V.comp.npo  192.168.17.242  Unregistration  7.6.1.1000      1
+12.12.2007	17:49:35        ORPDNPO ResearchDIR     PANDA   W242V.comp.npo  192.168.17.242  Registration    7.6.1.1000      1       98      99
+12.12.2007	17:50:12        ORPDNPO ResearchDIR     PANDA   W242V.comp.npo  192.168.17.242  Unregistration  7.6.1.1000      1
+05.12.2007	15:59:12        ORPDNPO ResearchDIR     PANDA   W242V.comp.npo  192.168.17.242  Registration    7.6.1.1000      1       98      99
+11.12.2007	15:32:01        ORPDNPO ResearchDIR     PANDA   W242V.comp.npo  192.168.17.242  Registration    7.6.1.1000      1       98      99
+11.12.2007	15:55:56        ORPDNPO ResearchDIR     PANDA   W242V.comp.npo  192.168.17.242  Registration    7.6.1.1000      1       98      99
+11.12.2007	15:56:37        ORPDNPO ResearchDIR     PANDA   W242V.comp.npo  192.168.17.242  Unregistration  7.6.1.1000      1
+04.12.2007	14:23:56        ORPDNPO ResearchDIR     Administrator   W242V.comp.npo  192.168.17.242  Registration   7.6.1.1000       1       98      99
+05.12.2007	14:01:15        ORPDNPO ResearchDIR     ISBuilderSystem W242V.comp.npo  192.168.17.242  Registration   7.6.1.1000       1       98      99
+06.12.2007	14:18:36        ORPDNPO ResearchDIR     PANDA   W242V.comp.npo  192.168.17.242  Registration    7.6.1.1000      1       98      99
+05.12.2007	13:43:00        ORPDNPO ResearchDIR     Administrator   W242V.comp.npo  192.168.17.242  Registration   7.6.1.1000       1       98      99
+05.12.2007	13:55:34        ORPDNPO ResearchDIR     PANDA   W242V.comp.npo  192.168.17.242  Registration    7.6.1.1000      2       97      99
+12.12.2007	13:38:09        ORPDNPO ResearchDIR     PANDA   W242V.comp.npo  192.168.17.242  Registration    7.6.1.1000      1       98      99
+12.12.2007	13:47:04        ORPDNPO ResearchDIR     PANDA   W242V.comp.npo  192.168.17.242  Unregistration  7.6.1.1000      1
+12.12.2007	11:22:26        ORPDNPO ResearchDIR     PANDA   W242V.comp.npo  192.168.17.242  Unregistration  7.6.1.1000      1
+04.12.2007	10:33:38        ORPDNPO ResearchDIR     Administrator   W242V.comp.npo  192.168.17.242  No free licences7.6.1.1000      1
+04.12.2007	10:31:14        ORPDNPO ResearchDIR     Administrator   W242V.comp.npo  192.168.17.242  No free licences7.6.1.1000      1
+12.12.2007	10:54:31        ORPDNPO ResearchDIR     PANDA   W242V.comp.npo  192.168.17.242  Registration    7.6.1.1000      1       98      99

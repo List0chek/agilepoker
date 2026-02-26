@@ -1,0 +1,73 @@
+.story_vote_result_info {
+  display: flex;
+  flex-direction: column;
+  margin-left: 114px;
+}
+
+.vote_value_dot_0 {
+  color: magenta;
+  font-size: 2em;
+}
+
+.vote_value_dot_1 {
+  color: #f8e71d;
+  font-size: 2em;
+}
+
+.vote_value_dot_2 {
+  color: #225378;
+  font-size: 2em;
+}
+
+.vote_value_dot_3 {
+  color: darkgreen;
+  font-size: 2em;
+}
+
+.vote_value_dot_4 {
+  color: darkslateblue;
+  font-size: 2em;
+}
+
+.vote_value_dot_5 {
+  color: hotpink;
+  font-size: 2em;
+}
+
+.vote_value_dot_6 {
+  color: crimson;
+  font-size: 2em;
+}
+
+.vote_value_dot_7 {
+  color: cadetblue;
+  font-size: 2em;
+}
+
+.vote_value_dot_8 {
+  color: maroon;
+  font-size: 2em;
+}
+
+.vote_value_mark {
+  color: #131b23;
+  font-weight: normal;
+  font-size: 20px;
+  font-style: normal;
+  line-height: 23px;
+}
+
+.vote_value_info {
+  display: flex;
+  width: 100px;
+  margin-top: 9px;
+  margin-bottom: 38px;
+  overflow: hidden;
+
+  color: #131b23;
+  font-weight: normal;
+  font-size: 14px;
+  font-style: normal;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}

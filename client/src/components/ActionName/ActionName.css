@@ -1,0 +1,11 @@
+.login_form_action_name {
+  margin-bottom: 20px;
+
+  color: #808284;
+  font-weight: normal;
+  font-size: 14px;
+  /*font-family: "Roboto";*/
+  font-style: normal;
+  line-height: 16px;
+  text-align: center;
+}

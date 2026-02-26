@@ -1,0 +1,28 @@
+.story_vote_invite_friend {
+  margin-top: 42px;
+  margin-bottom: 28px;
+  margin-left: 22px;
+
+  font-weight: normal;
+  font-size: 20px;
+  font-style: normal;
+  line-height: 23px;
+}
+
+.story_vote_invite_friend_url {
+  box-sizing: border-box;
+  width: 252px;
+  height: 39px;
+  margin-top: 10px;
+  padding-left: 14px;
+
+  color: #131b23;
+  font-weight: normal;
+  font-size: 14px;
+  font-family: "Roboto";
+  font-style: normal;
+  line-height: 16px;
+
+  border: 1px solid #d5d9de;
+  border-radius: 4px;
+}

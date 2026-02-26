@@ -1,0 +1,73 @@
+.completed_stories {
+  display: flex;
+  flex-direction: column;
+  margin-top: 5px;
+  margin-right: 315px;
+  margin-bottom: 52px;
+
+  background: #ffffff;
+
+  border-right: 1px solid #f2f3f4;
+  border-bottom: 1px solid #f2f3f4;
+  border-left: 1px solid #f2f3f4;
+  border-radius: 4px;
+}
+
+.completed_stories_text_and_amount_icon {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: 21px;
+}
+
+.completed_stories_amount_icon {
+  display: flex;
+  width: 25px;
+  height: 20px;
+  margin-left: 13px;
+
+  background: #c9cfd6;
+  border: 1px solid gray;
+  border-radius: 50% 50% 50% 50%;
+}
+
+.completed_stories_amount_icon_stories_count {
+  margin-top: auto;
+  margin-right: auto;
+  margin-bottom: auto;
+  margin-left: auto;
+
+  color: #ffffff;
+  font-weight: normal;
+  font-size: 15px;
+  font-style: normal;
+  line-height: 12px;
+}
+
+.completed_stories_header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  height: 60px;
+
+  color: #ffffff;
+  font-weight: normal;
+  font-size: 18px;
+  font-style: normal;
+
+  background: #4b9ae8;
+  border-radius: 4px 4px 0 0;
+}
+
+.completed_stories_download_btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 14px;
+  height: 17px;
+  margin-right: 21px;
+
+  background: transparent;
+  border: none;
+}

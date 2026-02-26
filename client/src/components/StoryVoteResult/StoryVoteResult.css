@@ -1,0 +1,62 @@
+.story_vote_result {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 31px;
+  margin-bottom: 52px;
+  padding-top: 36px;
+  padding-right: 102px;
+  padding-bottom: 61px;
+  padding-left: 89px;
+
+  background: #ffffff;
+}
+
+.story_vote_result_circle {
+  display: flex;
+  flex-basis: auto;
+  flex-direction: column;
+  flex-shrink: 0;
+  width: 260px;
+  height: 260px;
+  padding: 15px;
+
+  text-align: center;
+
+  border: 10px solid cornflowerblue;
+  border-radius: 55% 55% 55% 55%;
+}
+
+.line_players_count {
+  margin-top: 100px;
+
+  color: #131b23;
+  font-weight: normal;
+  font-size: 26px;
+  font-style: normal;
+  line-height: 30px;
+}
+
+.line_voted_caption {
+  margin-top: 4px;
+
+  color: #808284;
+  font-weight: normal;
+  font-size: 14px;
+  font-style: normal;
+  line-height: 16px;
+}
+
+.line_vote_avg_vote {
+  margin-top: 4px;
+  overflow: hidden;
+
+  color: #131b23;
+  font-weight: normal;
+  font-size: 26px;
+  font-style: normal;
+  line-height: 30px;
+
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}

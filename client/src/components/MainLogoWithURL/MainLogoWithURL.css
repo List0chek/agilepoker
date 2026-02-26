@@ -1,0 +1,21 @@
+.main_page_url_name {
+  color: #131b23;
+  font-weight: normal;
+  font-size: 48px;
+  font-style: normal;
+  line-height: 56px;
+}
+
+.main_page_url_logo {
+  width: 48.33px;
+  height: 48.33px;
+  margin-right: 16px;
+}
+
+.main_page_url {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  text-decoration: none;
+}
