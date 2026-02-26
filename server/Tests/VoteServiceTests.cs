@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using DataService.Repositories;
 using NUnit.Framework;
 using PlanPoker.Models;
@@ -38,11 +38,11 @@ namespace Tests
     public void CreateVoteTest()
     {
       var vote = this.voteService.SetVote(this.card.Id, this.discussion.Id, this.user.Id);
-      Assert.IsNotNull(vote);
-      Assert.AreEqual(this.card.Id, vote.Card.Id);
-      Assert.AreEqual(this.card.Id, vote.CardId);
-      Assert.AreEqual(this.discussion.Id, vote.DiscussionId);
-      Assert.AreEqual(this.user.Id, vote.UserId);
+      Assert.That(vote, Is.Not.Null);
+      Assert.That(vote.Card.Id, Is.EqualTo(this.card.Id));
+      Assert.That(vote.CardId, Is.EqualTo(this.card.Id));
+      Assert.That(vote.DiscussionId, Is.EqualTo(this.discussion.Id));
+      Assert.That(vote.UserId, Is.EqualTo(this.user.Id));
     }
 
     [Test]
@@ -52,11 +52,11 @@ namespace Tests
       var newCard = this.cardRepository.Create();
       this.cardRepository.Save(newCard);
       var changedVote = this.voteService.SetVote(newCard.Id, this.discussion.Id, this.user.Id);
-      Assert.IsNotNull(changedVote);
-      Assert.AreEqual(vote.Id, changedVote.Id);
-      Assert.AreEqual(newCard.Id, changedVote.Card.Id);
-      Assert.AreEqual(newCard.Id, changedVote.CardId);
-      Assert.AreEqual(this.user.Id, changedVote.UserId);
+      Assert.That(changedVote, Is.Not.Null);
+      Assert.That(changedVote.Id, Is.EqualTo(vote.Id));
+      Assert.That(changedVote.Card.Id, Is.EqualTo(newCard.Id));
+      Assert.That(changedVote.CardId, Is.EqualTo(newCard.Id));
+      Assert.That(changedVote.UserId, Is.EqualTo(this.user.Id));
     }
 
     [Test]

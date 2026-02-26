@@ -1,4 +1,4 @@
-﻿using System.Linq;
+using System.Linq;
 using DataService.Repositories;
 using NUnit.Framework;
 using PlanPoker.Models;
@@ -76,13 +76,13 @@ namespace Tests
     public void CreateDiscussionTest()
     {
       var discussion = this.discussionService.Create(this.room.Id, this.topicName, this.room.HostId, this.host.Token);
-      Assert.IsNotNull(discussion);
-      Assert.IsNotNull(discussion.Id);
-      Assert.AreEqual(this.topicName, discussion.Topic);
-      Assert.AreEqual(this.room.Id, discussion.RoomId);
-      Assert.AreEqual(null, discussion.AverageResult);
-      Assert.IsNotNull(discussion.DateStart);
-      Assert.IsNull(discussion.DateEnd);
+      Assert.That(discussion, Is.Not.Null);
+      Assert.That(discussion.Id, Is.Not.Null);
+      Assert.That(discussion.Topic, Is.EqualTo(this.topicName));
+      Assert.That(discussion.RoomId, Is.EqualTo(this.room.Id));
+      Assert.That(discussion.AverageResult, Is.Null);
+      Assert.That(discussion.DateStart, Is.Not.Null);
+      Assert.That(discussion.DateEnd, Is.Null);
     }
 
     [Test]
@@ -93,12 +93,12 @@ namespace Tests
       var votes = this.voteRepository.GetAll().Where(item => item.DiscussionId == discussion.Id).ToList();
       var vote = votes.Find(item => item.UserId == this.room.HostId);
 
-      Assert.IsNotNull(votes);
-      Assert.AreEqual(1, votes.Count());
-      Assert.AreEqual(this.card1, vote.Card);
-      Assert.AreEqual(this.card1.Id, vote.CardId);
-      Assert.AreEqual(this.room.Id, vote.RoomId);
-      Assert.AreEqual(this.host.Id, vote.UserId);
+      Assert.That(votes, Is.Not.Null);
+      Assert.That(votes.Count(), Is.EqualTo(1));
+      Assert.That(vote.Card, Is.EqualTo(this.card1));
+      Assert.That(vote.CardId, Is.EqualTo(this.card1.Id));
+      Assert.That(vote.RoomId, Is.EqualTo(this.room.Id));
+      Assert.That(vote.UserId, Is.EqualTo(this.host.Id));
     }
 
     [Test]
@@ -109,7 +109,7 @@ namespace Tests
 
       this.discussionService.Close(this.room.Id, discussion.Id, this.room.HostId);
 
-      Assert.IsNotNull(discussion.DateEnd);
+      Assert.That(discussion.DateEnd, Is.Not.Null);
     }
 
     [Test]
@@ -118,7 +118,7 @@ namespace Tests
       var discussion = this.discussionService.Create(this.room.Id, this.topicName, this.room.HostId, this.host.Token);
       this.discussionService.Delete(this.room.Id, discussion.Id, this.room.HostId);
       var isDiscussionDeleted = this.discussionRepository.Get(discussion.Id) == null;
-      Assert.IsTrue(isDiscussionDeleted);
+      Assert.That(isDiscussionDeleted, Is.True);
     }
 
     [Test]
@@ -127,8 +127,8 @@ namespace Tests
       var discussion = this.discussionService.Create(this.room.Id, this.topicName, this.room.HostId, this.host.Token);
       var recivedDiscussion = this.discussionService.GetResults(discussion.Id, this.room.HostId);
 
-      Assert.IsNotNull(recivedDiscussion);
-      Assert.AreEqual(discussion, recivedDiscussion);
+      Assert.That(recivedDiscussion, Is.Not.Null);
+      Assert.That(recivedDiscussion, Is.EqualTo(discussion));
     }
   }
 }

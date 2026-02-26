@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Linq;
 using DataService.Repositories;
 using NUnit.Framework;
@@ -29,7 +29,7 @@ namespace Tests
     public void CreateUserTest()
     {
       var newUser = this.userService.Create(this.userName);
-      Assert.AreEqual(this.userName, newUser.Name);
+      Assert.That(newUser.Name, Is.EqualTo(this.userName));
     }
 
     [Test]
@@ -38,7 +38,7 @@ namespace Tests
       var newName = "newName";
       var user = this.userService.Create(this.userName);
       this.userService.ChangeName(user.Id, user.Token, newName);
-      Assert.AreEqual(newName, user.Name);
+      Assert.That(user.Name, Is.EqualTo(newName));
     }
 
     [Test]
@@ -46,10 +46,10 @@ namespace Tests
     {
       var newUser = this.userService.Create(this.userName);
       var receivedUser = this.userService.Get(newUser.Token);
-      Assert.AreEqual(newUser, receivedUser);
-      Assert.AreEqual(newUser.Id, receivedUser.Id);
-      Assert.AreEqual(newUser.Name, receivedUser.Name);
-      Assert.AreEqual(newUser.Id, receivedUser.Id);
+      Assert.That(receivedUser, Is.EqualTo(newUser));
+      Assert.That(receivedUser.Id, Is.EqualTo(newUser.Id));
+      Assert.That(receivedUser.Name, Is.EqualTo(newUser.Name));
+      Assert.That(receivedUser.Id, Is.EqualTo(newUser.Id));
     }
 
     [Test]
@@ -59,8 +59,8 @@ namespace Tests
       this.userService.Delete(user.Token);
       var isUserDeleted = this.userRepository.Get(user.Id) == null;
       var isUserDeletedFromAllRooms = this.roomRepository.GetAll().Where(item => item.Members.Contains(user)).Count() == 0;
-      Assert.IsFalse(isUserDeleted);
-      Assert.IsTrue(isUserDeletedFromAllRooms);
+      Assert.That(isUserDeleted, Is.False);
+      Assert.That(isUserDeletedFromAllRooms, Is.True);
     }
 
     [Test]

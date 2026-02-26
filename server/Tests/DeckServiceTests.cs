@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using DataService.Repositories;
@@ -39,18 +39,18 @@ namespace Tests
     public void CreateNewDeckTest()
     {
       var newDeck = this.deckService.Create(this.deckName, this.cardIdsList);
-      Assert.AreEqual(this.deckName, newDeck.Name);
-      Assert.AreEqual(this.cardIdsList, newDeck.CardsIds);
-      Assert.IsNotNull(newDeck.Id);
+      Assert.That(newDeck.Name, Is.EqualTo(this.deckName));
+      Assert.That(newDeck.CardsIds, Is.EqualTo(this.cardIdsList));
+      Assert.That(newDeck.Id, Is.Not.Null);
     }
 
     [Test]
     public void GetDefaultDeckTest()
     {
       var defaultDeck = this.deckService.GetDefaultDeck();
-      Assert.AreEqual("defaultDeck", defaultDeck.Name);
-      Assert.IsNotNull(defaultDeck.CardsIds);
-      Assert.IsNotNull(defaultDeck.Id);
+      Assert.That(defaultDeck.Name, Is.EqualTo("defaultDeck"));
+      Assert.That(defaultDeck.CardsIds, Is.Not.Null);
+      Assert.That(defaultDeck.Id, Is.Not.Null);
     }
 
     [Test]

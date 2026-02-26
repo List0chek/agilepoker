@@ -3,7 +3,7 @@
 namespace DataService.Repositories
 {
   /// <summary>
-  /// VoteRepository. 
+  /// VoteRepository.
   /// </summary>
   public class InMemoryVoteRepository : InMemoryRepository<Vote>
   {

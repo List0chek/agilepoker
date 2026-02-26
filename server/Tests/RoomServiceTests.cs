@@ -1,4 +1,4 @@
-﻿using System.Linq;
+using System.Linq;
 using DataService.Repositories;
 using NUnit.Framework;
 using PlanPoker.Models;
@@ -45,11 +45,11 @@ namespace Tests
     public void CreateRoomTest()
     {
       var room = this.roomService.Create(this.roomName, this.owner.Id, this.owner.Token);
-      Assert.IsNotNull(room);
-      Assert.AreEqual(this.roomName, room.Name);
-      Assert.AreEqual(this.owner.Id, room.OwnerId);
-      Assert.AreEqual(this.owner.Id, room.HostId);
-      Assert.IsTrue(room.Members.Count(item => item == this.owner) == 1);
+      Assert.That(room, Is.Not.Null);
+      Assert.That(room.Name, Is.EqualTo(this.roomName));
+      Assert.That(room.OwnerId, Is.EqualTo(this.owner.Id));
+      Assert.That(room.HostId, Is.EqualTo(this.owner.Id));
+      Assert.That(room.Members.Count(item => item == this.owner) == 1, Is.True);
     }
 
     [Test]
@@ -59,9 +59,9 @@ namespace Tests
       var newUser = this.userService.Create("newUserName");
       this.roomService.AddMember(room.Id, newUser.Id);
 
-      Assert.IsTrue(room.Members.Contains(this.owner));
-      Assert.IsTrue(room.Members.Contains(newUser));
-      Assert.IsTrue(room.Members.Count(item => item == newUser) == 1);
+      Assert.That(room.Members.Contains(this.owner), Is.True);
+      Assert.That(room.Members.Contains(newUser), Is.True);
+      Assert.That(room.Members.Count(item => item == newUser) == 1, Is.True);
     }
 
     [Test]
@@ -71,12 +71,12 @@ namespace Tests
       var newUser = this.userService.Create("newUserName");
       this.roomService.ChangeHost(room.Id, newUser.Id, this.owner.Id);
 
-      Assert.AreEqual(this.owner.Id, room.OwnerId);
-      Assert.AreEqual(newUser.Id, room.HostId);
-      Assert.IsTrue(room.Members.Contains(this.owner));
-      Assert.IsTrue(room.Members.Contains(newUser));
-      Assert.IsTrue(room.Members.Count(item => item == this.owner) == 1);
-      Assert.IsTrue(room.Members.Count(item => item == newUser) == 1);
+      Assert.That(room.OwnerId, Is.EqualTo(this.owner.Id));
+      Assert.That(room.HostId, Is.EqualTo(newUser.Id));
+      Assert.That(room.Members.Contains(this.owner), Is.True);
+      Assert.That(room.Members.Contains(newUser), Is.True);
+      Assert.That(room.Members.Count(item => item == this.owner) == 1, Is.True);
+      Assert.That(room.Members.Count(item => item == newUser) == 1, Is.True);
     }
 
     [Test]
@@ -85,9 +85,9 @@ namespace Tests
       var room = this.roomService.Create(this.roomName, this.owner.Id, this.owner.Token);
       var receivedRoom = this.roomService.GetRoomInfo(room.Id, this.owner.Id);
 
-      Assert.IsNotNull(room);
-      Assert.IsNotNull(receivedRoom);
-      Assert.AreEqual(receivedRoom, receivedRoom);
+      Assert.That(room, Is.Not.Null);
+      Assert.That(receivedRoom, Is.Not.Null);
+      Assert.That(receivedRoom, Is.EqualTo(receivedRoom));
     }
   }
 }
