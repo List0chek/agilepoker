@@ -17,16 +17,19 @@ const coffeeIcon = (
   </svg>
 );
 
-const PlayerRow: React.FunctionComponent<IPlayerRowProps> = (props) => {
-  let userVoteValueIcon;
+const PlayerRow: React.FunctionComponent<IPlayerRowProps> = (props): React.ReactElement => {
+  let userVoteValueIcon: React.ReactNode;
 
   if (props.card) {
-    if (props.card.value === 'coffee') {
-      userVoteValueIcon = coffeeIcon;
-    } else if (props.card.value === 'infinity') {
-      userVoteValueIcon = '∞';
-    } else {
-      userVoteValueIcon = props.card.name;
+    switch (props.card.value) {
+      case 'coffee':
+        userVoteValueIcon = coffeeIcon;
+        break;
+      case 'infinity':
+        userVoteValueIcon = '∞';
+        break;
+      default:
+        userVoteValueIcon = props.card.name;
     }
   } else {
     userVoteValueIcon = `?`;

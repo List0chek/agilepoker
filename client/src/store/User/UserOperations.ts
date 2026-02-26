@@ -1,9 +1,9 @@
-import * as api from '../../api/Api';
 import { Dispatch } from 'redux';
-import { IRootState, IUser } from '../Types';
-import { updateUser, deleteUser as deleteUserFromStore } from './UserActionCreators';
-import { deleteRoom } from '../Room/RoomActionCreators';
+import * as api from '../../api/Api';
 import { operationWithLoadingIndicatorWrapper } from '../Loading/OperationWrappers';
+import { deleteRoom } from '../Room/RoomActionCreators';
+import { IRootState, IUser } from '../Types';
+import { deleteUser as deleteUserFromStore, updateUser } from './UserActionCreators';
 
 export const loadUserOperation = (): any => {
   return async (dispatch: Dispatch, getState: () => IRootState): Promise<IUser> => {

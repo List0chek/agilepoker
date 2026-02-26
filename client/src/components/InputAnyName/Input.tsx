@@ -13,7 +13,7 @@ class Input extends React.Component<IInputProps> {
     super(props);
   }
 
-  render() {
+  render(): React.ReactElement {
     const { className, labelName, placeholderText, inputName } = this.props;
     return (
       <div className={className}>

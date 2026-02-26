@@ -1,9 +1,7 @@
 import React from 'react';
-import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 import { Dispatch, compose } from 'redux';
-import { IRootState } from '../../../store/Types';
-import RoomPageView from './RoomPageView';
 import {
   addMemberToRoomOperation,
   closeDiscussionOperation,
@@ -12,7 +10,9 @@ import {
   loadRoomOperation,
   setVoteOperation,
 } from '../../../store/Room/RoomOperations';
+import { IRootState } from '../../../store/Types';
 import { loadUserOperation } from '../../../store/User/UserOperations';
+import RoomPageView from './RoomPageView';
 
 const mapStateToProps = (state: IRootState) => {
   return {

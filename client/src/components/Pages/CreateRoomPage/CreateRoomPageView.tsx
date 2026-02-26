@@ -1,8 +1,8 @@
 import React from 'react';
-import { RoutePath } from '../../Routes';
 import { RouteComponentProps } from 'react-router';
-import Form from '../../Form/Form';
 import { IRoom, IUser } from '../../../store/Types';
+import Form from '../../Form/Form';
+import { RoutePath } from '../../Routes';
 
 const data = [
   {
@@ -41,7 +41,7 @@ class CreateRoomPageView extends React.Component<IProps> {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  public async handleSubmit(inputUsernameValue: string, inputRoomnameValue: string, inputDiscussionName: string) {
+  public async handleSubmit(inputUsernameValue: string, inputRoomnameValue: string, inputDiscussionName: string): Promise<void> {
     try {
       await this.props.createUserAndRoomWithDiscussion(inputUsernameValue, inputRoomnameValue, inputDiscussionName);
       this.props.history.push(`${RoutePath.MAIN}/${this.props.room.id}`);
@@ -50,7 +50,7 @@ class CreateRoomPageView extends React.Component<IProps> {
     }
   }
 
-  render() {
+  render(): React.ReactElement {
     return (
       <>
         <main className='main_main'>

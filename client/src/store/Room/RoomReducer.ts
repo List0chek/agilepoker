@@ -1,5 +1,5 @@
-import { IRoom } from '../Types';
 import { ActionType } from '../Reducer';
+import { IRoom } from '../Types';
 import { IUpdateRoomAction } from './RoomActionCreators';
 
 const initState = null;

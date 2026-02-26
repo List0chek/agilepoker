@@ -1,8 +1,8 @@
 import React from 'react';
 import { RouteComponentProps } from 'react-router';
-import { RoutePath } from '../../Routes';
-import Form from '../../Form/Form';
 import { IRoom, IUser } from '../../../store/Types';
+import Form from '../../Form/Form';
+import { RoutePath } from '../../Routes';
 
 const data = [
   {
@@ -30,7 +30,7 @@ class InvitePageView extends React.Component<IProps> {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  public async handleSubmit(inputUsernameValue: string) {
+  public async handleSubmit(inputUsernameValue: string): Promise<void> {
     try {
       await this.props.createUser(inputUsernameValue);
       await this.props.addMemberToRoom(this.props.match.params.id, this.props.user.id);
@@ -40,7 +40,7 @@ class InvitePageView extends React.Component<IProps> {
     }
   }
 
-  render() {
+  render(): React.ReactElement {
     return (
       <>
         <main className='main_main'>

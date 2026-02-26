@@ -1,10 +1,7 @@
 import { Dispatch } from 'redux';
 import { toggleLoadingIndicator } from './LoadingActionCreators';
 
-export const operationWithLoadingIndicatorWrapper = async <T>(
-  dispatch: Dispatch,
-  operation: () => Promise<T>
-): Promise<T> => {
+export const operationWithLoadingIndicatorWrapper = async <T>(dispatch: Dispatch, operation: () => Promise<T>): Promise<T> => {
   dispatch(toggleLoadingIndicator(true));
   try {
     return await operation();

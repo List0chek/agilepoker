@@ -1,6 +1,6 @@
 import React from 'react';
-import Button from '../EnterButton/Button';
 import ActionName from '../ActionName/ActionName';
+import Button from '../EnterButton/Button';
 import Input from '../InputAnyName/Input';
 import './Form.css';
 
@@ -23,9 +23,9 @@ const Form: React.FunctionComponent<IProps> = (props) => {
     if (isInputRoomnameExist && isInputDiscussionNameExist) {
       const inputRoomname = form.elements[props.values[1].inputName] as HTMLInputElement;
       const inputDiscussionName = form.elements[props.values[2].inputName] as HTMLInputElement;
-
       props.onSubmit(inputUsername.value, inputRoomname.value, inputDiscussionName.value);
-    } else {
+    }
+    else {
       props.onSubmit(inputUsername.value);
     }
   };

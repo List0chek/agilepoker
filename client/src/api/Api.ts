@@ -1,8 +1,8 @@
-import { IError, IRoom, IUser } from '../store/Types';
-import { post, get } from './FetchWrapper';
 import authService from '../services/AuthService';
+import { IRoom, IUser } from '../store/Types';
+import { get, post } from './FetchWrapper';
 
-const baseUrl = 'http://localhost:52106/api';
+const baseUrl = 'http://localhost:5000/api';
 
 export const createUserRequest = async (userName: string): Promise<IUser> => {
   const response = await post(`${baseUrl}/user/create/?name=${userName}`);

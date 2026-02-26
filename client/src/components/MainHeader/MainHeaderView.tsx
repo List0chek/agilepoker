@@ -1,7 +1,7 @@
 import React from 'react';
+import { IUser } from '../../store/Types';
 import MainLogoWithURL from '../MainLogoWithURL/MainLogoWithURL';
 import UserButton from '../UserButton/UserButton';
-import { IUser } from '../../store/Types';
 
 interface IProps {
   user: IUser | null;

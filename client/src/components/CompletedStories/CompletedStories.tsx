@@ -1,10 +1,10 @@
 import React from 'react';
 import downloadStoriesIcon from '../../images/download_24px.svg';
-import DefaultButton from '../DefaultButton/DefaultButton';
-import CompletedStoryRow from './CompletedStoryRow/CompletedStoryRow';
-import { IPlayerRowProps } from '../DiscussionControllerBlock/PlayersRow/PlayerRow';
 import { IDiscussion, IRoom, IUser } from '../../store/Types';
+import DefaultButton from '../DefaultButton/DefaultButton';
+import { IPlayerRowProps } from '../DiscussionControllerBlock/PlayersRow/PlayerRow';
 import './CompletedStories.css';
+import CompletedStoryRow from './CompletedStoryRow/CompletedStoryRow';
 
 export interface ICompletedStory {
   storyName: string;
@@ -14,28 +14,23 @@ export interface ICompletedStory {
 
 interface IProps {
   completedStoriesList: Array<IDiscussion>;
-
   user: IUser;
-
   room: IRoom;
-
   onCompletedStoryClick(storyName: string): void;
-
   onDelete(storyName: string): void;
-
   onDownload(): void;
 }
 
-const CompletedStories: React.FunctionComponent<IProps> = (props) => {
-  const handleCompletedStoryClick = (discussionId: string) => {
+const CompletedStories: React.FunctionComponent<IProps> = (props): React.ReactElement => {
+  const handleCompletedStoryClick = (discussionId: string): void => {
     props.onCompletedStoryClick(discussionId);
   };
 
-  const handleDelete = (discussionId: string) => {
+  const handleDelete = (discussionId: string): void => {
     props.onDelete(discussionId);
   };
 
-  const handleDownload = () => {
+  const handleDownload = (): void => {
     props.onDownload();
   };
 

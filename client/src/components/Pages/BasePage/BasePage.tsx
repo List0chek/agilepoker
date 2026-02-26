@@ -1,6 +1,6 @@
 import React from 'react';
-import MainHeader from '../../MainHeader/MainHeader';
 import Footer from '../../Footer/Footer';
+import MainHeader from '../../MainHeader/MainHeader';
 
 const BasePage: React.FunctionComponent<any> = (props) => {
   return (

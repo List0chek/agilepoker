@@ -1,7 +1,7 @@
 import React from 'react';
 import './ErrorPage.css';
 
-const ErrorPage = () => {
+const ErrorPage = (): React.ReactElement => {
   return (
     <>
       <main className='main_main'>

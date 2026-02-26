@@ -1,21 +1,18 @@
 import React from 'react';
-import DefaultButton from '../DefaultButton/DefaultButton';
-import InviteFriend from './InviteFriend/InviteFriend';
-import CreateNewDiscussionControl from './CreateNewDiscussion/CreateNewDiscussionControl';
-import PlayerRow from './PlayersRow/PlayerRow';
 import { IRoom, IUser } from '../../store/Types';
+import DefaultButton from '../DefaultButton/DefaultButton';
+import CreateNewDiscussionControl from './CreateNewDiscussion/CreateNewDiscussionControl';
 import './DiscussionController.css';
+import InviteFriend from './InviteFriend/InviteFriend';
+import PlayerRow from './PlayersRow/PlayerRow';
 
 interface IProps {
   playersList: Array<IUser>;
   url: string;
-
   onGoButtonClick(discussionName: string): void;
   onEnterButtonClick(isClosed: boolean): void;
-
   isDiscussionClosed: boolean;
   discussionName: string;
-  user: IUser;
   room: IRoom;
 }
 
@@ -35,7 +32,7 @@ class DiscussionController extends React.Component<IProps, IState> {
     this.handleGoButtonClick = this.handleGoButtonClick.bind(this);
   }
 
-  public handleEnterButtonClick = () => {
+  public handleEnterButtonClick = (): void => {
     this.props.onEnterButtonClick(this.props.isDiscussionClosed);
     const i = ButtonState.indexOf(this.state.buttonState);
     this.setState({
@@ -43,15 +40,15 @@ class DiscussionController extends React.Component<IProps, IState> {
     });
   };
 
-  public handleGoButtonClick = (discussionName: string) => {
+  public handleGoButtonClick = (discussionName: string): void => {
     this.props.onGoButtonClick(discussionName);
     this.setState({
       buttonState: ButtonState[0],
     });
   };
 
-  public render() {
-    const { playersList, url, isDiscussionClosed, room, user } = this.props;
+  public render(): React.ReactElement {
+    const { playersList, url, isDiscussionClosed, room } = this.props;
     const { buttonState } = this.state;
     const currentDiscussionIndex = room.discussions.length - 1;
     const currentDiscussion =
@@ -84,7 +81,7 @@ class DiscussionController extends React.Component<IProps, IState> {
           </table>
           {/*Как вариант можно ставить условие так: buttonState == ButtonState[0] || buttonState == ButtonState[1], но тогда будет хуже читабельность кода*/}
           {this.props.user.id === this.props.room.hostId &&
-            (buttonState == 'notClicked' || buttonState == 'FinishVotingIsClicked' ? (
+            (buttonState === 'notClicked' || buttonState === 'FinishVotingIsClicked' ? (
               <DefaultButton
                 className='story_vote_button'
                 buttonText={isDiscussionClosed === false ? 'Finish voting' : 'Next'}

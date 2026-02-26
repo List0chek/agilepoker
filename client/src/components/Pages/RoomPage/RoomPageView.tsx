@@ -1,15 +1,15 @@
 import React from 'react';
 import { RouteComponentProps } from 'react-router';
+import history from '../../../services/HistoryService';
+import { ICard, IError, IRoom, IUser, IVote } from '../../../store/Types';
 import Board from '../../Board/Board';
+import CompletedStories from '../../CompletedStories/CompletedStories';
 import DiscussionController from '../../DiscussionControllerBlock/DiscussionController';
-import Modal from '../Modal/Modal';
+import { RoutePath } from '../../Routes';
 import StoryVoteResult from '../../StoryVoteResult/StoryVoteResult';
 import { IStoryVoteResultInfoRowProps } from '../../StoryVoteResult/VoteValueResultInfo/StoryVoteResultInfo';
-import { ICard, IError, IRoom, IUser, IVote } from '../../../store/Types';
-import history from '../../../services/HistoryService';
-import { RoutePath } from '../../Routes';
+import Modal from '../Modal/Modal';
 import '../Modal/Modal.css';
-import CompletedStories from '../../CompletedStories/CompletedStories';
 
 interface IMatchParams {
   id: string;
@@ -51,7 +51,7 @@ class RoomPageView extends React.Component<IRoomPageProps, IState> {
 
   public static timer: NodeJS.Timeout;
 
-  public async componentDidMount() {
+  public async componentDidMount(): Promise<void> {
     try {
       await this.props.loadUser();
     } catch (error) {
@@ -68,11 +68,11 @@ class RoomPageView extends React.Component<IRoomPageProps, IState> {
     }, 3000);
   }
 
-  public componentWillUnmount() {
+  public componentWillUnmount(): void {
     clearInterval(RoomPageView.timer);
   }
 
-  public async handleVote(value: ICard) {
+  public async handleVote(value: ICard): Promise<void> {
     const currentDiscussionIndex = this.props.room.discussions.length - 1;
     const currentDiscussion = currentDiscussionIndex >= 0 ? this.props.room.discussions[currentDiscussionIndex] : null;
     if (currentDiscussion && this.props.user) {
@@ -80,7 +80,7 @@ class RoomPageView extends React.Component<IRoomPageProps, IState> {
     }
   }
 
-  public createStoryVoteResultInfoData(s: Array<IStoryVoteResultInfoRowProps>) {
+  public createStoryVoteResultInfoData(s: Array<IStoryVoteResultInfoRowProps>): Array<IStoryVoteResultInfoRowProps> {
     const currentDiscussion = this.props.room.discussions[this.props.room.discussions.length - 1];
     const votes = currentDiscussion ? currentDiscussion.votes : [];
     for (let i = 0; i < votes.length; i++) {
@@ -99,7 +99,7 @@ class RoomPageView extends React.Component<IRoomPageProps, IState> {
     return s;
   }
 
-  public async handleEnterButtonClick() {
+  public async handleEnterButtonClick(): Promise<void> {
     const currentDiscussionIndex = this.props.room.discussions.length - 1;
     const currentDiscussion = currentDiscussionIndex >= 0 ? this.props.room.discussions[currentDiscussionIndex] : null;
     if (currentDiscussion && currentDiscussion.dateEnd === null && this.props.user) {
@@ -107,7 +107,7 @@ class RoomPageView extends React.Component<IRoomPageProps, IState> {
     }
   }
 
-  public async handleGoButtonClick(value: string) {
+  public async handleGoButtonClick(value: string): Promise<void> {
     try {
       if (this.props.user) await this.props.createDiscussion(this.props.room.id, value, this.props.user.id);
     } catch (error) {
@@ -115,29 +115,29 @@ class RoomPageView extends React.Component<IRoomPageProps, IState> {
     }
   }
 
-  public handleCompletedStoryClick(discussionId: string) {
+  public handleCompletedStoryClick(discussionId: string): void {
     this.setState({
       isModalOpen: true,
       openedDiscussionId: discussionId,
     });
   }
 
-  public handleStoryDetailsCloseButtonClick() {
+  public handleStoryDetailsCloseButtonClick(): void {
     this.setState({
       isModalOpen: false,
       openedDiscussionId: '',
     });
   }
 
-  public async handleStoryDetailsDeleteButtonClick(discussionId: string) {
+  public async handleStoryDetailsDeleteButtonClick(discussionId: string): Promise<void> {
     if (this.props.user) await this.props.deleteDiscussion(this.props.room.id, discussionId, this.props.user.id);
   }
 
-  public handleStoryDetailsDownloadButtonClick() {
+  public handleStoryDetailsDownloadButtonClick(): void {
     return;
   }
 
-  public render() {
+  public render(): React.ReactElement | null {
     if (this.props.room == null) {
       return null;
     }
@@ -162,7 +162,6 @@ class RoomPageView extends React.Component<IRoomPageProps, IState> {
                 />
               )}
               <DiscussionController
-                user={user}
                 room={room}
                 playersList={room.members}
                 url={window.location.href}

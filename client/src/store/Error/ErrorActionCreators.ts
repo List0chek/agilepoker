@@ -9,6 +9,6 @@ export interface IUpdateErrorAction extends Action {
 export const updateError = (error: IError): IUpdateErrorAction => {
   return {
     type: ActionType.UPDATE_ERROR,
-    error: error,
+    error: error
   };
 };
