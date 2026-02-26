@@ -3,7 +3,7 @@
 namespace DataService.Repositories
 {
   /// <summary>
-  /// CardRepository. 
+  /// CardRepository.
   /// </summary>
   public class InMemoryCardRepository : InMemoryRepository<Card>
   {

@@ -3,7 +3,7 @@
 namespace DataService.Repositories
 {
   /// <summary>
-  /// RoomRepository. 
+  /// RoomRepository.
   /// </summary>
   public class InMemoryRoomRepository : InMemoryRepository<Room>
   {

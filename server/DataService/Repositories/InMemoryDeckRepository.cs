@@ -4,7 +4,7 @@ using PlanPoker.Models;
 namespace DataService.Repositories
 {
   /// <summary>
-  /// DeckRepository. 
+  /// DeckRepository.
   /// </summary>
   public class InMemoryDeckRepository : InMemoryRepository<Deck>
   {
