@@ -2,19 +2,19 @@
 
 namespace PlanPoker.Models
 {
+  /// <summary>
+  /// Класс UserDTO.
+  /// </summary>
+  public class UserDTO
+  {
     /// <summary>
-    /// Класс UserDTO.
+    /// Id пользователя.
     /// </summary>
-    public class UserDTO
-    {
-        /// <summary>
-        /// Id пользователя.
-        /// </summary>
-        public Guid Id { get; set; }
+    public Guid Id { get; set; }
 
-        /// <summary>
-        /// Имя пользователя.
-        /// </summary>
-        public string Name { get; set; }
-    }
+    /// <summary>
+    /// Имя пользователя.
+    /// </summary>
+    public string Name { get; set; }
+  }
 }

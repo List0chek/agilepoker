@@ -1,13 +1,13 @@
 import * as React from 'react';
-import { Switch, Route } from 'react-router-dom';
-import { RoutePath } from '../Routes';
+import { connect } from 'react-redux';
+import { Route, Switch } from 'react-router-dom';
+import { IRootState } from '../../store/Types';
+import BasePage from '../Pages/BasePage/BasePage';
 import FirstPage from '../Pages/CreateRoomPage/CreateRoomPage';
+import ErrorPage from '../Pages/ErrorPage/ErrorPage';
 import InvitePage from '../Pages/InvitePage/InvitePage';
 import RoomPage from '../Pages/RoomPage/RoomPage';
-import ErrorPage from '../Pages/ErrorPage/ErrorPage';
-import BasePage from '../Pages/BasePage/BasePage';
-import { connect } from 'react-redux';
-import { IRootState } from '../../store/Types';
+import { RoutePath } from '../Routes';
 import Spinner from '../Spinner/Spinner';
 import './App.css';
 

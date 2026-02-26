@@ -1,7 +1,0 @@
-03.09.2021 17:36:27
-03.09.2021 17:36:27
-03.09.2021 17:36:27
-this.curIndex++
-this.curIndex++
-this.curIndex++
-this.curIndex++ Console.WriteLine(); 

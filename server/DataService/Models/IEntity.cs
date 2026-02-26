@@ -2,14 +2,14 @@
 
 namespace DataService.Models
 {
+  /// <summary>
+  /// Интерфейс сущности.
+  /// </summary>
+  public interface IEntity
+  {
     /// <summary>
-    /// Интерфейс сущности.
+    /// Id сущности.
     /// </summary>
-    public interface IEntity
-    {
-        /// <summary>
-        /// Id сущности.
-        /// </summary>
-        Guid Id { get; }
-    }
+    Guid Id { get; }
+  }
 }

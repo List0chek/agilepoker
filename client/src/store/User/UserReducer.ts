@@ -1,5 +1,5 @@
-import { IUser } from '../Types';
 import { ActionType } from '../Reducer';
+import { IUser } from '../Types';
 import { IUpdateUserAction } from './UserActionCreators';
 
 const initState = null;

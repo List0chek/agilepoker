@@ -9,7 +9,7 @@ export interface IUpdateUserAction extends Action {
 export const updateUser = (user: IUser): IUpdateUserAction => {
   return {
     type: ActionType.UPDATE_USER,
-    user: user,
+    user: user
   };
 };
 

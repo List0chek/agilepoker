@@ -1,6 +1,6 @@
 import React from 'react';
-import Card from '../Card/Card';
 import { ICard } from '../../store/Types';
+import Card from '../Card/Card';
 import './Board.css';
 
 interface IProps {
@@ -14,11 +14,11 @@ class Board extends React.Component<IProps> {
     this.handleCardChange = this.handleCardChange.bind(this);
   }
 
-  public handleCardChange(value: ICard) {
+  public handleCardChange(value: ICard): void {
     this.props.onCardChange(value);
   }
 
-  public render() {
+  public render(): React.ReactElement {
     const { cardValues } = this.props;
     return (
       <div className='board'>

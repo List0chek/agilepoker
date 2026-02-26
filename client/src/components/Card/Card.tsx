@@ -14,19 +14,22 @@ const coffeeIcon = (
   </svg>
 );
 
-const Card: React.FunctionComponent<IProps> = (props) => {
-  const handleChange = () => {
+const Card: React.FunctionComponent<IProps> = (props): React.ReactElement => {
+  const handleChange = (): void => {
     props.onChange(props.card);
   };
 
-  let cardIcon;
+  let cardIcon: React.ReactNode;
 
-  if (props.card.value === 'coffee') {
-    cardIcon = coffeeIcon;
-  } else if (props.card.value === 'infinity') {
-    cardIcon = '∞';
-  } else {
-    cardIcon = props.card.name;
+  switch (props.card.value) {
+    case 'coffee':
+      cardIcon = coffeeIcon;
+      break;
+    case 'infinity':
+      cardIcon = '∞';
+      break;
+    default:
+      cardIcon = props.card.name;
   }
 
   return (

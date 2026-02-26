@@ -2,25 +2,25 @@
 
 namespace PlanPoker.DTO.Converters
 {
+  /// <summary>
+  /// Класс UserDTOConverter.
+  /// </summary>
+  public class UserDTOConverter
+  {
     /// <summary>
-    /// Класс UserDTOConverter.
+    /// Метод конвертации User в UserDTO.
     /// </summary>
-    public class UserDTOConverter
+    /// <param name="user">Экземпляр User.</param>
+    /// <returns>Экземпляр UserDTO.</returns>
+    public UserDTO Convert(User user)
     {
-        /// <summary>
-        /// Метод конвертации User в UserDTO.
-        /// </summary>
-        /// <param name="user">Экземпляр User.</param>
-        /// <returns>Экземпляр UserDTO.</returns>
-        public UserDTO Convert(User user)
+      {
+        return new UserDTO()
         {
-            {
-                return new UserDTO()
-                {
-                    Id = user.Id,
-                    Name = user.Name
-                };
-            }
-        }
+          Id = user.Id,
+          Name = user.Name
+        };
+      }
     }
+  }
 }

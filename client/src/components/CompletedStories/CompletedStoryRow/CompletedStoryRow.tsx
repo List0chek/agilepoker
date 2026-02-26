@@ -1,7 +1,7 @@
 import React from 'react';
 import deleteStoryIcon from '../../../images/delete_24px.svg';
-import DefaultButton from '../../DefaultButton/DefaultButton';
 import { IDiscussion, IRoom, IUser } from '../../../store/Types';
+import DefaultButton from '../../DefaultButton/DefaultButton';
 import './CompletedStoryRow.css';
 
 export interface ICompletedStoryRowProps {
@@ -12,12 +12,12 @@ export interface ICompletedStoryRowProps {
   onDelete(storyName: string): void;
 }
 
-const CompletedStoryRow: React.FunctionComponent<ICompletedStoryRowProps> = (props) => {
-  const handleClick = () => {
+const CompletedStoryRow: React.FunctionComponent<ICompletedStoryRowProps> = (props): React.ReactElement => {
+  const handleClick = (): void => {
     props.onClick(props.discussion.id);
   };
 
-  const handleDelete = () => {
+  const handleDelete = (): void => {
     props.onDelete(props.discussion.id);
   };
 

@@ -1,8 +1,8 @@
 import { connect } from 'react-redux';
-import { IRootState } from '../../store/Types';
 import { Dispatch } from 'redux';
-import UserButtonView from './UserButtonView';
+import { IRootState } from '../../store/Types';
 import { deleteUserOperation } from '../../store/User/UserOperations';
+import UserButtonView from './UserButtonView';
 
 const mapStateToProps = (state: IRootState) => {
   return {

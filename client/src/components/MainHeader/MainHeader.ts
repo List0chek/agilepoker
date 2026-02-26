@@ -1,7 +1,7 @@
-import { IRootState } from '../../store/Types';
 import { connect } from 'react-redux';
-import MainHeaderView from './MainHeaderView';
+import { IRootState } from '../../store/Types';
 import './MainHeader.css';
+import MainHeaderView from './MainHeaderView';
 
 const mapStateToProps = (state: IRootState) => {
   return {

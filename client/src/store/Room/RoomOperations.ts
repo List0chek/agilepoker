@@ -1,9 +1,9 @@
-import * as api from '../../api/Api';
-import { updateRoom } from './RoomActionCreators';
 import { Dispatch } from 'redux';
+import * as api from '../../api/Api';
+import { baseOperationWrapper, operationWithLoadingIndicatorWrapper } from '../Loading/OperationWrappers';
 import { IRoom, IRootState, IUser } from '../Types';
 import { updateUser } from '../User/UserActionCreators';
-import { baseOperationWrapper, operationWithLoadingIndicatorWrapper } from '../Loading/OperationWrappers';
+import { updateRoom } from './RoomActionCreators';
 
 export const createRoomOperation = (roomName: string, userId: string): any => {
   return async (dispatch: Dispatch, getState: () => IRootState): Promise<IRoom> => {

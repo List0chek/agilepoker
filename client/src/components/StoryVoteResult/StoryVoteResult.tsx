@@ -1,6 +1,6 @@
 import React from 'react';
-import StoryVoteResultInfoRow, { IStoryVoteResultInfoRowProps } from './VoteValueResultInfo/StoryVoteResultInfo';
 import './StoryVoteResult.css';
+import StoryVoteResultInfoRow, { IStoryVoteResultInfoRowProps } from './VoteValueResultInfo/StoryVoteResultInfo';
 
 export interface IStoryVoteResultProps {
   playersCount: string;

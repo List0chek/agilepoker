@@ -5,9 +5,9 @@ interface IProps {
   url: string;
 }
 
-const InviteFriend: React.FunctionComponent<IProps> = (props) => {
-  const handleClick = (event: any) => {
-    event.target.select();
+const InviteFriend: React.FunctionComponent<IProps> = (props): React.ReactElement => {
+  const handleClick = (event: React.MouseEvent<HTMLInputElement>): void => {
+    (event.target as HTMLInputElement).select();
   };
 
   return (

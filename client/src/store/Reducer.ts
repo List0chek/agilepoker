@@ -1,9 +1,9 @@
-import { IRootState } from './Types';
 import { combineReducers } from 'redux';
-import { roomReducer } from './Room/RoomReducer';
-import { userReducer } from './User/UserReducer';
-import { loadingIndicatorReducer } from './Loading/LoadingReducer';
 import { errorReducer } from './Error/ErrorReducer';
+import { loadingIndicatorReducer } from './Loading/LoadingReducer';
+import { roomReducer } from './Room/RoomReducer';
+import { IRootState } from './Types';
+import { userReducer } from './User/UserReducer';
 
 export const ActionType = {
   UPDATE_USER: 'UPDATE_USER',

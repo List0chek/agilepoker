@@ -3,7 +3,7 @@ import './DefaultButton.css';
 
 interface IProps {
   className: string;
-  buttonText: any;
+  buttonText: React.ReactNode;
   onClick(): void;
 }
 

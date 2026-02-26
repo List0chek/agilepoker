@@ -1,7 +1,7 @@
 import React from 'react';
+import { IRoom, IUser } from '../../../store/Types';
 import '../../DiscussionControllerBlock/DiscussionController.css';
 import PlayerRow from '../../DiscussionControllerBlock/PlayersRow/PlayerRow';
-import { IDiscussion, IRoom, IUser } from '../../../store/Types';
 import './Modal.css';
 
 interface IProps {
@@ -19,7 +19,7 @@ const Modal: React.FunctionComponent<IProps> = (props) => {
     props.onStoryDetailsCloseButtonClick();
   };
 
-  const discussionInModal = props.room.discussions.find((discussion) => discussion.id === props.openedDiscussionId);
+  const discussionInModal = props.room.discussions.find(discussion => discussion.id === props.openedDiscussionId);
 
   return (
     <div className='modal_block_isOpened'>
@@ -35,7 +35,7 @@ const Modal: React.FunctionComponent<IProps> = (props) => {
                 <PlayerRow
                   key={item.id}
                   user={item}
-                  card={discussionInModal?.votes.find((vote) => vote.user.id === item.id)?.card}
+                  card={discussionInModal?.votes.find(vote => vote.user.id === item.id)?.card}
                   isDiscussionClosed={true}
                 />
               );

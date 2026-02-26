@@ -14,7 +14,7 @@ class CreateNewDiscussionControl extends React.Component<IProps> {
     this.handleGoButtonClick = this.handleGoButtonClick.bind(this);
   }
 
-  public handleGoButtonClick = () => {
+  public handleGoButtonClick = (): void => {
     const { current } = this.inputRef;
     let textValue = '';
     if (current != null) {
@@ -23,7 +23,7 @@ class CreateNewDiscussionControl extends React.Component<IProps> {
     this.props.onGoButtonClick(textValue);
   };
 
-  public render() {
+  public render(): React.ReactElement {
     return (
       <div className='story_vote_go_create_discussion_block'>
         <input
