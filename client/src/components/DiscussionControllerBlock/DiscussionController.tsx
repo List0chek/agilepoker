@@ -14,6 +14,7 @@ interface IProps {
   isDiscussionClosed: boolean;
   discussionName: string;
   room: IRoom;
+  user: IUser;
 }
 
 interface IState {

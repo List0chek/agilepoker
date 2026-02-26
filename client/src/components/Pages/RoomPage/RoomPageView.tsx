@@ -162,13 +162,14 @@ class RoomPageView extends React.Component<IRoomPageProps, IState> {
                 />
               )}
               <DiscussionController
-                room={room}
                 playersList={room.members}
                 url={window.location.href}
                 onEnterButtonClick={this.handleEnterButtonClick}
                 onGoButtonClick={this.handleGoButtonClick}
                 isDiscussionClosed={currentDiscussion.dateEnd != null}
                 discussionName={currentDiscussion.topic}
+                room={room}
+                user={user}
               />
             </div>
             <CompletedStories
