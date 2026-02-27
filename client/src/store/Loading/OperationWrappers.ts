@@ -7,7 +7,6 @@ export const operationWithLoadingIndicatorWrapper = async <T>(dispatch: Dispatch
     return await operation();
   }
  catch (error: unknown) {
-    console.log(error);
     throw error;
   }
  finally {
@@ -20,7 +19,6 @@ export const baseOperationWrapper = async <T>(dispatch: Dispatch, operation: () 
     return await operation();
   }
  catch (error: unknown) {
-    console.log(error);
     throw error;
   }
 };
