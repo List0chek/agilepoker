@@ -1,4 +1,6 @@
 name: Build and Test
+permissions:
+  contents: read
 
 permissions:
   contents: read
