@@ -3,6 +3,7 @@
 ## General Rules
 
 - NEVER add `Co-Authored-By: Claude` or any Claude/AI attribution to commit messages.
+- Never use single-line `if` / `return` / control flow bodies — always use a block `{ }` on a new line.
 
 ## Project Structure
 
