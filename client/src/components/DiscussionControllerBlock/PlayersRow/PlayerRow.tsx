@@ -20,7 +20,7 @@ const coffeeIcon = (
 const PlayerRow: React.FunctionComponent<IPlayerRowProps> = (props): React.ReactElement => {
   let userVoteValueIcon: React.ReactNode;
 
-  if (props.card) {
+  if (props.card)
     switch (props.card.value) {
       case 'coffee':
         userVoteValueIcon = coffeeIcon;
@@ -31,9 +31,9 @@ const PlayerRow: React.FunctionComponent<IPlayerRowProps> = (props): React.React
       default:
         userVoteValueIcon = props.card.name;
     }
-  } else {
+
+ else
     userVoteValueIcon = `?`;
-  }
 
   return (
     <tr className='row'>

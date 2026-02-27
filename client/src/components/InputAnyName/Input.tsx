@@ -26,7 +26,7 @@ class Input extends React.Component<IInputProps> {
           type='text'
           name={inputName}
           placeholder={placeholderText}
-          required
+          required={true}
         />
       </div>
     );

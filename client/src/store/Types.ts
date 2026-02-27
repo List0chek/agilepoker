@@ -26,7 +26,7 @@ export interface IDiscussion {
   dateEnd: string;
   votes: Array<IVote>;
   averageResult: number;
-  duration: number /*TODO: поменять вывод длительности обсуждения на бэке*/;
+  duration: number /* TODO: поменять вывод длительности обсуждения на бэке*/;
 }
 
 export interface IRoom {

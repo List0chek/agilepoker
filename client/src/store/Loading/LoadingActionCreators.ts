@@ -8,6 +8,6 @@ export interface IToggleLoadingIndicator extends Action {
 export const toggleLoadingIndicator = (showIndicator: boolean): IToggleLoadingIndicator => {
   return {
     type: ActionType.TOGGLE_LOADING_INDICATOR,
-    showIndicator: showIndicator,
+    showIndicator,
   };
 };

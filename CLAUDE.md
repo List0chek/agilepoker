@@ -39,7 +39,11 @@ agilepoker/
 ### TypeScript
 
 - `Array<T>` generic syntax — never `T[]`
+- No `any`. No non-null assertion (`!`)
 - Interfaces: `I` prefix, PascalCase (`IUser`, `IRootState`, `ICard`)
+- Enums: PascalCase, no prefix
+- Type aliases: PascalCase, no prefix
+- Interface member delimiter: semicolon, required on last member in multiline
 - Single quotes for strings
 - Semicolons always
 - Trailing commas: allowed in multi-line objects/arrays
@@ -50,12 +54,19 @@ agilepoker/
 - Single quotes
 - Semicolons always
 - Trailing commas in multi-line arrays/objects
-- Max line length: ~100 characters (soft limit)
+- Max line length: 150 characters
+- Brace style: Stroustrup
+- Code block should not be on the same line with condition in conditional statements; body must always be on a new line; prefer no curly braces for single-statement bodies
+- Object curlies: space inside `{ foo }`
+- No trailing spaces. No multiple empty lines
+- Empty line at the end of every file
+- Comments must have space after `//`
 
 ### Imports
 
 - React import first, then third-party, then local
 - CSS imports at the end of the import block
+- No duplicate imports
 
 ### Redux
 
@@ -76,6 +87,17 @@ agilepoker/
 - Per-component `.css` files imported in the TSX file
 - `classnames` library for conditional class names
 - No CSS-in-JS; no Tailwind; no MUI
+
+### General Patterns
+
+- `const` by default; `let` only when reassignment needed; no `var`
+- `===` for equality (`== null` is allowed for null/undefined checks)
+- Nullish coalescing `??` over `||` for defaults; optional chaining `?.` for safe access
+- No `console.*` in production code
+- Object shorthand: `{ foo }` not `{ foo: foo }`
+- Arrow functions preferred for callbacks; no `.bind()` in JSX
+- Self-closing tags required for empty JSX elements
+- Boolean JSX props must be explicit: `disabled={true}` not just `disabled`
 
 ## Backend (server/)
 

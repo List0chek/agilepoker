@@ -23,7 +23,7 @@ const CompletedStoryRow: React.FunctionComponent<ICompletedStoryRowProps> = (pro
 
   const currentDiscussionIndex = props.room.discussions.length - 1;
   const currentDiscussion =
-    currentDiscussionIndex != undefined && currentDiscussionIndex >= 0
+    currentDiscussionIndex !== undefined && currentDiscussionIndex >= 0
       ? props.room.discussions[currentDiscussionIndex]
       : null;
 

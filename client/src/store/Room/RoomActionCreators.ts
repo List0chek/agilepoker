@@ -9,7 +9,7 @@ export interface IUpdateRoomAction extends Action {
 export const updateRoom = (room: IRoom): IUpdateRoomAction => {
   return {
     type: ActionType.UPDATE_ROOM,
-    room: room,
+    room,
   };
 };
 

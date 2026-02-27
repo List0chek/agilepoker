@@ -54,7 +54,8 @@ class RoomPageView extends React.Component<IRoomPageProps, IState> {
   public async componentDidMount(): Promise<void> {
     try {
       await this.props.loadUser();
-    } catch (error) {
+    }
+ catch (error) {
       history.push(`${RoutePath.INVITE}/${this.props.match.params.id}`);
     }
 
@@ -64,7 +65,8 @@ class RoomPageView extends React.Component<IRoomPageProps, IState> {
     }
 
     RoomPageView.timer = setInterval(async () => {
-      if (this.props.user) await this.props.loadRoomInfo(this.props.room.id, this.props.user.id);
+      if (this.props.user)
+await this.props.loadRoomInfo(this.props.room.id, this.props.user.id);
     }, 3000);
   }
 
@@ -75,9 +77,9 @@ class RoomPageView extends React.Component<IRoomPageProps, IState> {
   public async handleVote(value: ICard): Promise<void> {
     const currentDiscussionIndex = this.props.room.discussions.length - 1;
     const currentDiscussion = currentDiscussionIndex >= 0 ? this.props.room.discussions[currentDiscussionIndex] : null;
-    if (currentDiscussion && this.props.user) {
+    if (currentDiscussion && this.props.user)
       await this.props.setVote(currentDiscussion.id, this.props.user.id, value.id);
-    }
+
   }
 
   public createStoryVoteResultInfoData(s: Array<IStoryVoteResultInfoRowProps>): Array<IStoryVoteResultInfoRowProps> {
@@ -94,7 +96,8 @@ class RoomPageView extends React.Component<IRoomPageProps, IState> {
         ).toString(),
       };
       const voteValueDuplicate = s.find((s) => s.voteValueMark === votes[i].card.value);
-      if (!voteValueDuplicate) s.push(newStoryVoteResultInfoData);
+      if (!voteValueDuplicate)
+s.push(newStoryVoteResultInfoData);
     }
     return s;
   }
@@ -102,15 +105,17 @@ class RoomPageView extends React.Component<IRoomPageProps, IState> {
   public async handleEnterButtonClick(): Promise<void> {
     const currentDiscussionIndex = this.props.room.discussions.length - 1;
     const currentDiscussion = currentDiscussionIndex >= 0 ? this.props.room.discussions[currentDiscussionIndex] : null;
-    if (currentDiscussion && currentDiscussion.dateEnd === null && this.props.user) {
+    if (currentDiscussion && currentDiscussion.dateEnd === null && this.props.user)
       await this.props.closeDiscussion(this.props.room.id, currentDiscussion.id, this.props.user.id);
-    }
+
   }
 
   public async handleGoButtonClick(value: string): Promise<void> {
     try {
-      if (this.props.user) await this.props.createDiscussion(this.props.room.id, value, this.props.user.id);
-    } catch (error) {
+      if (this.props.user)
+await this.props.createDiscussion(this.props.room.id, value, this.props.user.id);
+    }
+ catch (error) {
       alert(error);
     }
   }
@@ -130,7 +135,8 @@ class RoomPageView extends React.Component<IRoomPageProps, IState> {
   }
 
   public async handleStoryDetailsDeleteButtonClick(discussionId: string): Promise<void> {
-    if (this.props.user) await this.props.deleteDiscussion(this.props.room.id, discussionId, this.props.user.id);
+    if (this.props.user)
+await this.props.deleteDiscussion(this.props.room.id, discussionId, this.props.user.id);
   }
 
   public handleStoryDetailsDownloadButtonClick(): void {
@@ -138,9 +144,9 @@ class RoomPageView extends React.Component<IRoomPageProps, IState> {
   }
 
   public render(): React.ReactElement | null {
-    if (this.props.room == null) {
+    if (this.props.room == null)
       return null;
-    }
+
     const currentDiscussionIndex = this.props.room.discussions.length - 1;
     const currentDiscussion = currentDiscussionIndex >= 0 ? this.props.room.discussions[currentDiscussionIndex] : null;
 
@@ -191,7 +197,9 @@ class RoomPageView extends React.Component<IRoomPageProps, IState> {
           )}
         </>
       );
-    } else return null;
+    }
+ else
+return null;
   }
 }
 

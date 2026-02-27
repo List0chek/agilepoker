@@ -1,12 +1,12 @@
 import { Dispatch } from 'redux';
 import * as api from '../../api/Api';
 import { baseOperationWrapper, operationWithLoadingIndicatorWrapper } from '../Loading/OperationWrappers';
-import { IRoom, IRootState, IUser } from '../Types';
+import { IRoom, IUser } from '../Types';
 import { updateUser } from '../User/UserActionCreators';
 import { updateRoom } from './RoomActionCreators';
 
-export const createRoomOperation = (roomName: string, userId: string): any => {
-  return async (dispatch: Dispatch, getState: () => IRootState): Promise<IRoom> => {
+export const createRoomOperation = (roomName: string, userId: string): ((dispatch: Dispatch) => Promise<IRoom>) => {
+  return async (dispatch: Dispatch): Promise<IRoom> => {
     return operationWithLoadingIndicatorWrapper(dispatch, async () => {
       const response = await api.createRoomRequest(roomName, userId);
       dispatch(updateRoom(response));
@@ -15,8 +15,8 @@ export const createRoomOperation = (roomName: string, userId: string): any => {
   };
 };
 
-export const setVoteOperation = (discussionId: string, userId: string, cardId: string): any => {
-  return async (dispatch: Dispatch, getState: () => IRootState): Promise<IRoom> => {
+export const setVoteOperation = (discussionId: string, userId: string, cardId: string): ((dispatch: Dispatch) => Promise<IRoom>) => {
+  return async (dispatch: Dispatch): Promise<IRoom> => {
     return operationWithLoadingIndicatorWrapper(dispatch, async () => {
       const response = await api.setVoteRequest(discussionId, userId, cardId);
       dispatch(updateRoom(response));
@@ -25,8 +25,8 @@ export const setVoteOperation = (discussionId: string, userId: string, cardId: s
   };
 };
 
-export const loadRoomOperation = (roomId: string, userId: string): any => {
-  return async (dispatch: Dispatch, getState: () => IRootState): Promise<IRoom> => {
+export const loadRoomOperation = (roomId: string, userId: string): ((dispatch: Dispatch) => Promise<IRoom>) => {
+  return async (dispatch: Dispatch): Promise<IRoom> => {
     return baseOperationWrapper(dispatch, async () => {
       const response = await api.getRoomInfoRequest(roomId, userId);
       dispatch(updateRoom(response));
@@ -35,8 +35,8 @@ export const loadRoomOperation = (roomId: string, userId: string): any => {
   };
 };
 
-export const closeDiscussionOperation = (roomId: string, discussionId: string, userId: string): any => {
-  return async (dispatch: Dispatch, getState: () => IRootState): Promise<IRoom> => {
+export const closeDiscussionOperation = (roomId: string, discussionId: string, userId: string): ((dispatch: Dispatch) => Promise<IRoom>) => {
+  return async (dispatch: Dispatch): Promise<IRoom> => {
     return operationWithLoadingIndicatorWrapper(dispatch, async () => {
       const response = await api.closeDiscussionRequest(roomId, discussionId, userId);
       dispatch(updateRoom(response));
@@ -45,8 +45,8 @@ export const closeDiscussionOperation = (roomId: string, discussionId: string, u
   };
 };
 
-export const createDiscussionOperation = (roomId: string, topicName: string, userId: string): any => {
-  return async (dispatch: Dispatch, getState: () => IRootState): Promise<IRoom> => {
+export const createDiscussionOperation = (roomId: string, topicName: string, userId: string): ((dispatch: Dispatch) => Promise<IRoom>) => {
+  return async (dispatch: Dispatch): Promise<IRoom> => {
     return operationWithLoadingIndicatorWrapper(dispatch, async () => {
       const response = await api.createDiscussionRequest(roomId, topicName, userId);
       dispatch(updateRoom(response));
@@ -55,8 +55,8 @@ export const createDiscussionOperation = (roomId: string, topicName: string, use
   };
 };
 
-export const deleteDiscussionOperation = (roomId: string, discussionId: string, userId: string): any => {
-  return async (dispatch: Dispatch, getState: () => IRootState): Promise<IRoom> => {
+export const deleteDiscussionOperation = (roomId: string, discussionId: string, userId: string): ((dispatch: Dispatch) => Promise<IRoom>) => {
+  return async (dispatch: Dispatch): Promise<IRoom> => {
     return operationWithLoadingIndicatorWrapper(dispatch, async () => {
       const response = await api.deleteDiscussionRequest(roomId, discussionId, userId);
       dispatch(updateRoom(response));
@@ -65,8 +65,8 @@ export const deleteDiscussionOperation = (roomId: string, discussionId: string, 
   };
 };
 
-export const addMemberToRoomOperation = (roomId: string, userId: string): any => {
-  return async (dispatch: Dispatch, getState: () => IRootState): Promise<IRoom> => {
+export const addMemberToRoomOperation = (roomId: string, userId: string): ((dispatch: Dispatch) => Promise<IRoom>) => {
+  return async (dispatch: Dispatch): Promise<IRoom> => {
     return operationWithLoadingIndicatorWrapper(dispatch, async () => {
       const response = await api.addMemberToRoomRequest(roomId, userId);
       dispatch(updateRoom(response));
@@ -79,8 +79,8 @@ export const createUserAndRoomWithDiscussionOperation = (
   userName: string,
   roomName: string,
   discussionName: string
-): any => {
-  return async (dispatch: Dispatch, getState: () => IRootState): Promise<{ user: IUser; room: IRoom }> => {
+): ((dispatch: Dispatch) => Promise<{ user: IUser; room: IRoom }>) => {
+  return async (dispatch: Dispatch): Promise<{ user: IUser; room: IRoom }> => {
     return operationWithLoadingIndicatorWrapper(dispatch, async () => {
       const response = await api.createUserAndRoomWithDiscussionRequest(userName, roomName, discussionName);
       dispatch(updateUser(response.user));
