@@ -17,9 +17,9 @@ class CreateNewDiscussionControl extends React.Component<IProps> {
   public handleGoButtonClick = (): void => {
     const { current } = this.inputRef;
     let textValue = '';
-    if (current != null) {
+    if (current != null)
       textValue = current.value;
-    }
+
     this.props.onGoButtonClick(textValue);
   };
 

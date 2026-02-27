@@ -32,9 +32,9 @@ const Form: React.FunctionComponent<IProps> = (props) => {
       const inputDiscussionName = form.elements.namedItem(props.values[2].inputName) as HTMLInputElement;
       props.onSubmit(inputUsername.value, inputRoomname.value, inputDiscussionName.value);
     }
-    else {
+    else
       props.onSubmit(inputUsername.value);
-    }
+
   };
 
   return (

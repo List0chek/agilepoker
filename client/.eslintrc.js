@@ -64,6 +64,7 @@ module.exports = {
     'no-trailing-spaces': 'error',
     'no-multiple-empty-lines': ['error', { max: 1, maxEOF: 0 }],
     'nonblock-statement-body-position': ['error', 'below'],
+    'curly': ['error', 'multi'],
     'brace-style': ['error', 'stroustrup'],
 
     // ── React / JSX ───────────────────────────────────────────────────────────

@@ -77,9 +77,9 @@ await this.props.loadRoomInfo(this.props.room.id, this.props.user.id);
   public async handleVote(value: ICard): Promise<void> {
     const currentDiscussionIndex = this.props.room.discussions.length - 1;
     const currentDiscussion = currentDiscussionIndex >= 0 ? this.props.room.discussions[currentDiscussionIndex] : null;
-    if (currentDiscussion && this.props.user) {
+    if (currentDiscussion && this.props.user)
       await this.props.setVote(currentDiscussion.id, this.props.user.id, value.id);
-    }
+
   }
 
   public createStoryVoteResultInfoData(s: Array<IStoryVoteResultInfoRowProps>): Array<IStoryVoteResultInfoRowProps> {
@@ -105,9 +105,9 @@ s.push(newStoryVoteResultInfoData);
   public async handleEnterButtonClick(): Promise<void> {
     const currentDiscussionIndex = this.props.room.discussions.length - 1;
     const currentDiscussion = currentDiscussionIndex >= 0 ? this.props.room.discussions[currentDiscussionIndex] : null;
-    if (currentDiscussion && currentDiscussion.dateEnd === null && this.props.user) {
+    if (currentDiscussion && currentDiscussion.dateEnd === null && this.props.user)
       await this.props.closeDiscussion(this.props.room.id, currentDiscussion.id, this.props.user.id);
-    }
+
   }
 
   public async handleGoButtonClick(value: string): Promise<void> {
@@ -144,9 +144,9 @@ await this.props.deleteDiscussion(this.props.room.id, discussionId, this.props.u
   }
 
   public render(): React.ReactElement | null {
-    if (this.props.room == null) {
+    if (this.props.room == null)
       return null;
-    }
+
     const currentDiscussionIndex = this.props.room.discussions.length - 1;
     const currentDiscussion = currentDiscussionIndex >= 0 ? this.props.room.discussions[currentDiscussionIndex] : null;
 
