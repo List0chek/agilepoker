@@ -10,9 +10,9 @@ const Spinner: React.FC<IProps> = (props) => {
   return (
     <div className={'loading_indicator_wrap'}>
       <div className={'lds-facebook'}>
-        <div></div>
-        <div></div>
-        <div></div>
+        <div />
+        <div />
+        <div />
       </div>
     </div>
   );

@@ -20,7 +20,7 @@ const InviteFriend: React.FunctionComponent<IProps> = (props): React.ReactElemen
           name='url'
           value={props.url}
           onClick={handleClick}
-          readOnly
+          readOnly={true}
         />
       </label>
     </div>

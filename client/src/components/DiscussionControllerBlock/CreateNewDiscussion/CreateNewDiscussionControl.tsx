@@ -30,7 +30,7 @@ class CreateNewDiscussionControl extends React.Component<IProps> {
           className='story_vote_go_textbox'
           type='text'
           placeholder='Enter something'
-          required
+          required={true}
           ref={this.inputRef}
         />
         <button className='go_btn' type='button' onClick={this.handleGoButtonClick}>

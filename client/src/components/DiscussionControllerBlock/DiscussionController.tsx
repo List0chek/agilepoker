@@ -53,7 +53,7 @@ class DiscussionController extends React.Component<IProps, IState> {
     const { buttonState } = this.state;
     const currentDiscussionIndex = room.discussions.length - 1;
     const currentDiscussion =
-      currentDiscussionIndex != undefined && currentDiscussionIndex >= 0
+      currentDiscussionIndex !== undefined && currentDiscussionIndex >= 0
         ? room.discussions[currentDiscussionIndex]
         : null;
     return (
@@ -80,7 +80,7 @@ class DiscussionController extends React.Component<IProps, IState> {
                 })}
             </tbody>
           </table>
-          {/*Как вариант можно ставить условие так: buttonState == ButtonState[0] || buttonState == ButtonState[1], но тогда будет хуже читабельность кода*/}
+          {/* Как вариант можно ставить условие так: buttonState == ButtonState[0] || buttonState == ButtonState[1], но тогда будет хуже читабельность кода*/}
           {this.props.user.id === this.props.room.hostId &&
             (buttonState === 'notClicked' || buttonState === 'FinishVotingIsClicked' ? (
               <DefaultButton

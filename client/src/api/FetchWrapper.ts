@@ -1,6 +1,6 @@
 async function http<T = unknown>(method: string, url: string, headers?: HeadersInit): Promise<T> {
   const response = await fetch(url, {
-    method: method,
+    method,
     headers: {
       'Content-Type': 'application/json',
       ...headers,
