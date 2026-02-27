@@ -1,8 +1,9 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 import { IRootState } from '../../../store/Types';
-import { compose, Dispatch } from 'redux';
+import { AnyAction, compose } from 'redux';
 import { connect } from 'react-redux';
+import { ThunkDispatch } from 'redux-thunk';
 import InvitePageView from './InvitePageView';
 import { createUserOperation } from '../../../store/User/UserOperations';
 import { addMemberToRoomOperation } from '../../../store/Room/RoomOperations';
@@ -14,7 +15,7 @@ const mapStateToProps = (state: IRootState) => {
   };
 };
 
-const mapDispatchToProps = (dispatch: Dispatch) => {
+const mapDispatchToProps = (dispatch: ThunkDispatch<IRootState, unknown, AnyAction>) => {
   return {
     createUser: async (userName: string) => {
       return dispatch(await createUserOperation(userName));

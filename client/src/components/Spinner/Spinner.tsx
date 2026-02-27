@@ -6,16 +6,15 @@ interface IProps {
 }
 
 const Spinner: React.FC<IProps> = (props) => {
+  if (!props.show) return null;
   return (
-    props.show && (
-      <div className={'loading_indicator_wrap'}>
-        <div className={'lds-facebook'}>
-          <div></div>
-          <div></div>
-          <div></div>
-        </div>
+    <div className={'loading_indicator_wrap'}>
+      <div className={'lds-facebook'}>
+        <div></div>
+        <div></div>
+        <div></div>
       </div>
-    )
+    </div>
   );
 };
 

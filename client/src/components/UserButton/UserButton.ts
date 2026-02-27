@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
-import { Dispatch } from 'redux';
+import { AnyAction } from 'redux';
+import { ThunkDispatch } from 'redux-thunk';
 import { IRootState } from '../../store/Types';
 import { deleteUserOperation } from '../../store/User/UserOperations';
 import UserButtonView from './UserButtonView';
@@ -10,7 +11,7 @@ const mapStateToProps = (state: IRootState) => {
   };
 };
 
-const mapDispatchToProps = (dispatch: Dispatch) => {
+const mapDispatchToProps = (dispatch: ThunkDispatch<IRootState, unknown, AnyAction>) => {
   return {
     deleteUser: async () => {
       dispatch(await deleteUserOperation());

@@ -1,7 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import { Dispatch, compose } from 'redux';
+import { AnyAction, compose } from 'redux';
+import { ThunkDispatch } from 'redux-thunk';
 import {
   addMemberToRoomOperation,
   closeDiscussionOperation,
@@ -22,7 +23,7 @@ const mapStateToProps = (state: IRootState) => {
   };
 };
 
-const mapDispatchToProps = (dispatch: Dispatch) => {
+const mapDispatchToProps = (dispatch: ThunkDispatch<IRootState, unknown, AnyAction>) => {
   return {
     setVote: async (discussionId: string, userId: string, cardId: string) => {
       return dispatch(await setVoteOperation(discussionId, userId, cardId));
