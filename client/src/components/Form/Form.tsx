@@ -34,7 +34,6 @@ const Form: React.FunctionComponent<IProps> = (props) => {
     }
     else
       props.onSubmit(inputUsername.value);
-
   };
 
   return (

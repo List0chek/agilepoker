@@ -46,7 +46,7 @@ class CreateRoomPageView extends React.Component<IProps> {
       await this.props.createUserAndRoomWithDiscussion(inputUsernameValue, inputRoomnameValue, inputDiscussionName);
       this.props.history.push(`${RoutePath.MAIN}/${this.props.room.id}`);
     }
- catch (error) {
+    catch (error) {
       alert(error);
     }
   }

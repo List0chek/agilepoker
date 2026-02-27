@@ -31,8 +31,7 @@ const PlayerRow: React.FunctionComponent<IPlayerRowProps> = (props): React.React
       default:
         userVoteValueIcon = props.card.name;
     }
-
- else
+  else
     userVoteValueIcon = `?`;
 
   return (

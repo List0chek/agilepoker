@@ -36,7 +36,7 @@ class InvitePageView extends React.Component<IProps> {
       await this.props.addMemberToRoom(this.props.match.params.id, this.props.user.id);
       this.props.history.push(`${RoutePath.MAIN}/${this.props.match.params.id}`);
     }
- catch (error) {
+    catch (error) {
       alert(error);
     }
   }

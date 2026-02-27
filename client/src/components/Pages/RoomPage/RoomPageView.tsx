@@ -55,7 +55,7 @@ class RoomPageView extends React.Component<IRoomPageProps, IState> {
     try {
       await this.props.loadUser();
     }
- catch (error) {
+    catch (error) {
       history.push(`${RoutePath.INVITE}/${this.props.match.params.id}`);
     }
 
@@ -66,7 +66,7 @@ class RoomPageView extends React.Component<IRoomPageProps, IState> {
 
     RoomPageView.timer = setInterval(async () => {
       if (this.props.user)
-await this.props.loadRoomInfo(this.props.room.id, this.props.user.id);
+        await this.props.loadRoomInfo(this.props.room.id, this.props.user.id);
     }, 3000);
   }
 
@@ -79,7 +79,6 @@ await this.props.loadRoomInfo(this.props.room.id, this.props.user.id);
     const currentDiscussion = currentDiscussionIndex >= 0 ? this.props.room.discussions[currentDiscussionIndex] : null;
     if (currentDiscussion && this.props.user)
       await this.props.setVote(currentDiscussion.id, this.props.user.id, value.id);
-
   }
 
   public createStoryVoteResultInfoData(s: Array<IStoryVoteResultInfoRowProps>): Array<IStoryVoteResultInfoRowProps> {
@@ -97,7 +96,7 @@ await this.props.loadRoomInfo(this.props.room.id, this.props.user.id);
       };
       const voteValueDuplicate = s.find((s) => s.voteValueMark === votes[i].card.value);
       if (!voteValueDuplicate)
-s.push(newStoryVoteResultInfoData);
+        s.push(newStoryVoteResultInfoData);
     }
     return s;
   }
@@ -113,9 +112,9 @@ s.push(newStoryVoteResultInfoData);
   public async handleGoButtonClick(value: string): Promise<void> {
     try {
       if (this.props.user)
-await this.props.createDiscussion(this.props.room.id, value, this.props.user.id);
+        await this.props.createDiscussion(this.props.room.id, value, this.props.user.id);
     }
- catch (error) {
+    catch (error) {
       alert(error);
     }
   }
@@ -136,7 +135,7 @@ await this.props.createDiscussion(this.props.room.id, value, this.props.user.id)
 
   public async handleStoryDetailsDeleteButtonClick(discussionId: string): Promise<void> {
     if (this.props.user)
-await this.props.deleteDiscussion(this.props.room.id, discussionId, this.props.user.id);
+      await this.props.deleteDiscussion(this.props.room.id, discussionId, this.props.user.id);
   }
 
   public handleStoryDetailsDownloadButtonClick(): void {
@@ -198,8 +197,8 @@ await this.props.deleteDiscussion(this.props.room.id, discussionId, this.props.u
         </>
       );
     }
- else
-return null;
+    else
+      return null;
   }
 }
 
