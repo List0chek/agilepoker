@@ -5,7 +5,7 @@ export const operationWithLoadingIndicatorWrapper = async <T>(dispatch: Dispatch
   dispatch(toggleLoadingIndicator(true));
   try {
     return await operation();
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.log(error);
     throw error;
   } finally {
@@ -16,7 +16,7 @@ export const operationWithLoadingIndicatorWrapper = async <T>(dispatch: Dispatch
 export const baseOperationWrapper = async <T>(dispatch: Dispatch, operation: () => Promise<T>): Promise<T> => {
   try {
     return await operation();
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.log(error);
     throw error;
   }

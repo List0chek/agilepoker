@@ -1,7 +1,11 @@
 import React from 'react';
 import './Spinner.css';
 
-const Spinner: React.FC<any> = (props) => {
+interface IProps {
+  show: boolean;
+}
+
+const Spinner: React.FC<IProps> = (props) => {
   return (
     props.show && (
       <div className={'loading_indicator_wrap'}>

@@ -4,9 +4,16 @@ import Button from '../EnterButton/Button';
 import Input from '../InputAnyName/Input';
 import './Form.css';
 
+interface IFormValue {
+  className: string;
+  labelName: string;
+  placeholderText: string;
+  inputName: string;
+}
+
 interface IProps {
   title: string;
-  values: Array<any>;
+  values: Array<IFormValue>;
   onSubmit(inputUsernameValue: string, inputRoomnameValue?: string, inputDiscussionName?: string): void;
 }
 

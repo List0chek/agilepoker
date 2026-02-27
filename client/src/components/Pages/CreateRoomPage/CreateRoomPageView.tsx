@@ -25,7 +25,7 @@ const data = [
   },
 ];
 
-interface IProps extends RouteComponentProps<any> {
+interface IProps extends RouteComponentProps {
   createUserAndRoomWithDiscussion(
     userName: string,
     roomName: string,

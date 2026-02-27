@@ -1,4 +1,4 @@
-async function http(method: string, url: string, headers?: HeadersInit): Promise<any> {
+async function http<T = unknown>(method: string, url: string, headers?: HeadersInit): Promise<T> {
   const response = await fetch(url, {
     method: method,
     headers: {
@@ -20,10 +20,10 @@ async function http(method: string, url: string, headers?: HeadersInit): Promise
   }
 }
 
-export async function get(url: string, headers?: HeadersInit): Promise<any> {
-  return await http('GET', url, headers);
+export async function get<T = unknown>(url: string, headers?: HeadersInit): Promise<T> {
+  return await http<T>('GET', url, headers);
 }
 
-export async function post(url: string, headers?: HeadersInit): Promise<any> {
-  return await http('POST', url, headers);
+export async function post<T = unknown>(url: string, headers?: HeadersInit): Promise<T> {
+  return await http<T>('POST', url, headers);
 }

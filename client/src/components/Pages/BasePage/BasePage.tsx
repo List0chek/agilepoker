@@ -2,7 +2,11 @@ import React from 'react';
 import Footer from '../../Footer/Footer';
 import MainHeader from '../../MainHeader/MainHeader';
 
-const BasePage: React.FunctionComponent<any> = (props) => {
+interface IProps {
+  children?: React.ReactNode;
+}
+
+const BasePage: React.FunctionComponent<IProps> = (props) => {
   return (
     <>
       <MainHeader />

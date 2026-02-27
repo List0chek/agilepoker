@@ -5,7 +5,7 @@ import { get, post } from './FetchWrapper';
 const baseUrl = 'http://localhost:5000/api';
 
 export const createUserRequest = async (userName: string): Promise<IUser> => {
-  const response = await post(`${baseUrl}/user/create/?name=${userName}`);
+  const response = await post<{ token: string; user: IUser }>(`${baseUrl}/user/create/?name=${userName}`);
   authService.setToken(response.token);
   return response.user;
 };
@@ -53,7 +53,7 @@ export const createUserAndRoomWithDiscussionRequest = async (
   roomName: string,
   discussionName: string
 ): Promise<{ user: IUser; room: IRoom }> => {
-  const response = await post(
+  const response = await post<{ token: string; user: IUser; room: IRoom }>(
     `${baseUrl}/room/CreateUserAndRoomWithDiscussion/?userName=${userName}&roomName=${roomName}&discussionName=${discussionName}`
   );
   authService.setToken(response.token);
