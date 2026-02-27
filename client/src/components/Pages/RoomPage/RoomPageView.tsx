@@ -54,7 +54,8 @@ class RoomPageView extends React.Component<IRoomPageProps, IState> {
   public async componentDidMount(): Promise<void> {
     try {
       await this.props.loadUser();
-    } catch (error) {
+    }
+ catch (error) {
       history.push(`${RoutePath.INVITE}/${this.props.match.params.id}`);
     }
 
@@ -64,7 +65,8 @@ class RoomPageView extends React.Component<IRoomPageProps, IState> {
     }
 
     RoomPageView.timer = setInterval(async () => {
-      if (this.props.user) await this.props.loadRoomInfo(this.props.room.id, this.props.user.id);
+      if (this.props.user)
+await this.props.loadRoomInfo(this.props.room.id, this.props.user.id);
     }, 3000);
   }
 
@@ -94,7 +96,8 @@ class RoomPageView extends React.Component<IRoomPageProps, IState> {
         ).toString(),
       };
       const voteValueDuplicate = s.find((s) => s.voteValueMark === votes[i].card.value);
-      if (!voteValueDuplicate) s.push(newStoryVoteResultInfoData);
+      if (!voteValueDuplicate)
+s.push(newStoryVoteResultInfoData);
     }
     return s;
   }
@@ -109,8 +112,10 @@ class RoomPageView extends React.Component<IRoomPageProps, IState> {
 
   public async handleGoButtonClick(value: string): Promise<void> {
     try {
-      if (this.props.user) await this.props.createDiscussion(this.props.room.id, value, this.props.user.id);
-    } catch (error) {
+      if (this.props.user)
+await this.props.createDiscussion(this.props.room.id, value, this.props.user.id);
+    }
+ catch (error) {
       alert(error);
     }
   }
@@ -130,7 +135,8 @@ class RoomPageView extends React.Component<IRoomPageProps, IState> {
   }
 
   public async handleStoryDetailsDeleteButtonClick(discussionId: string): Promise<void> {
-    if (this.props.user) await this.props.deleteDiscussion(this.props.room.id, discussionId, this.props.user.id);
+    if (this.props.user)
+await this.props.deleteDiscussion(this.props.room.id, discussionId, this.props.user.id);
   }
 
   public handleStoryDetailsDownloadButtonClick(): void {
@@ -191,7 +197,9 @@ class RoomPageView extends React.Component<IRoomPageProps, IState> {
           )}
         </>
       );
-    } else return null;
+    }
+ else
+return null;
   }
 }
 

@@ -55,8 +55,8 @@ agilepoker/
 - Semicolons always
 - Trailing commas in multi-line arrays/objects
 - Max line length: 150 characters
-- Brace style: Stroustrup (single-line without braces allowed for simple statements)
-- Code block should not be on the same line with condition in conditional statements
+- Brace style: Stroustrup
+- Code block should not be on the same line with condition in conditional statements; body must always be on a new line (braces are optional for single-statement bodies)
 - Object curlies: space inside `{ foo }`
 - No trailing spaces. No multiple empty lines
 - Empty line at the end of every file

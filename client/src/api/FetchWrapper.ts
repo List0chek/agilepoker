@@ -11,11 +11,14 @@ async function http<T = unknown>(method: string, url: string, headers?: HeadersI
   const contentType = response.headers.get('Content-Type');
   if (contentType && contentType.includes('application/json')) {
     responseJSON = await response.json();
-  } else responseJSON = undefined;
+  }
+ else
+responseJSON = undefined;
 
   if (response.status === 200) {
     return responseJSON;
-  } else {
+  }
+ else {
     throw new Error(responseJSON?.message);
   }
 }

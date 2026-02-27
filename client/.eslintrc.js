@@ -63,6 +63,8 @@ module.exports = {
     'spaced-comment': ['error', 'always'],
     'no-trailing-spaces': 'error',
     'no-multiple-empty-lines': ['error', { max: 1, maxEOF: 0 }],
+    'nonblock-statement-body-position': ['error', 'below'],
+    'brace-style': ['error', 'stroustrup'],
 
     // ── React / JSX ───────────────────────────────────────────────────────────
     'react/self-closing-comp': 'error',
