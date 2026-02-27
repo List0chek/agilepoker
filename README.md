@@ -1,4 +1,4 @@
-# Agile Poker (Planning Poker)
+# Agile Poker (Poker Planning)
 
 A collaborative estimation tool for agile teams. Team members join a shared room, vote on user story effort using poker cards, and the moderator reveals results and calculates averages — all in real time via polling.
 
